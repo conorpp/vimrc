@@ -12,7 +12,7 @@ highlight ColorColumn ctermbg=17
 set colorcolumn=81
 exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\uB7"
 set list
-
+set mouse=a " Mouse highlighting
 " Set Leader Key
 let mapleader = ","
 
