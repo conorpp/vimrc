@@ -71,72 +71,18 @@ map <leader>H              :wincmd H<cr>
 map <leader>K              :wincmd K<cr>
 map <leader>L              :wincmd L<cr>
 map <leader>J              :wincmd J<cr>
-
+map <F2> <Esc>
+imap <F2> <Esc>
 nmap <left>  :3wincmd <<cr>
 nmap <right> :3wincmd ><cr>
 nmap <up>    :3wincmd +<cr>
 nmap <down>  :3wincmd -<cr>
 " for color
-"set t_Co=256
 
-" Plugins "
+" file binding for using tabs in makefiles
+autocmd FileType make setlocal noexpandtab
 
-"nnoremap <C-n> :NERDTreeToggle<cr>
-
-""""""""""
-" Vundle "
-""""""""""
-"set nocompatible              " be iMproved
-"filetype off                  " required!
-
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-"Bundle 'gmarik/vundle'
-
-" My bundles here:
-" :BundleInstall  to install
-" :BundleClean    to remove unused
-"
-" original repos on GitHub
-"Bundle 'tpope/vim-fugitive'
-" autocomplete
-" Bundle 'Valloric/YouCompleteMe'
-"" YouCompleteMe Specific things "
-" let g:clang_complete_auto = 1
-" let g:clang_use_library = 1
-" let g:clang_debug = 1
-" let g:clang_library_path = '/usr/local/lib/'
-" let g:clang_user_options='|| exit 0'
-"
-" Warnings/errors
-"Bundle 'scrooloose/syntastic'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
-" non-GitHub repos
-"Bundle 'git://git.wincent.com/command-t.git'
-" Git repos on your local machine (i.e. when working on your own plugin)
-" Bundle 'file:///Users/gmarik/path/to/plugin'
-" ...
-
-"filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle commands are not allowe
-
-"syntax enable
-set background=dark
-colorscheme solarized
-set t_Co=16
+set t_Co=256
+colorscheme distinguished
+syntax enable
+let g:solarized_termcolors=256
