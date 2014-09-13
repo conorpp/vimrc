@@ -22,12 +22,14 @@ let mapleader = ","
 function FileHeading()
     let s:line=line(".")
     call setline(s:line,"/*")
-    call setline(s:line,"  Name: Conor Patrick")
-    call append(s:line,"  Date: ".strftime("%b %d %Y"))
-    call append(s:line+1,"  Assignment: ")
-    call append(s:line+2,"  Source File: ".expand('%'))
-    call append(s:line+3,"  Action: ")
-    call append(s:line+4,"*/")
+    call append(s:line,"  Name: Conor Patrick")
+    call append(s:line+1,"  PID#: 905700607")
+    call append(s:line+2,"  Email: conorpp@vt.edu")
+    call append(s:line+3,"  Class: ECE 3574")
+    call append(s:line+4,"  Date: ".strftime("%b %d %Y"))
+    call append(s:line+5,"  Assignment: HW")
+    call append(s:line+6,"  Source File: ".expand('%'))
+    call append(s:line+7,"*/")
     unlet s:line
 endfunction
 function FunctionHeading()
@@ -41,8 +43,8 @@ function FunctionHeading()
     unlet s:line
 endfunction
 
-map <leader>f mz:execute FunctionHeading()<CR>`zjA
-map <leader>F mz:execute FileHeading()<CR>`z4kA
+map <leader>F mz:execute FunctionHeading()<CR>`zjA
+map <leader>f mz:execute FileHeading()<CR>`z4kA
 
 " Window movement
 
@@ -73,6 +75,8 @@ map <leader>L              :wincmd L<cr>
 map <leader>J              :wincmd J<cr>
 map <F2> <Esc>
 imap <F2> <Esc>
+map <F3> v
+imap <F3> <Esc>v
 nmap <left>  :3wincmd <<cr>
 nmap <right> :3wincmd ><cr>
 nmap <up>    :3wincmd +<cr>
