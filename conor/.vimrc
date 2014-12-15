@@ -101,3 +101,6 @@ set t_Co=256
 colorscheme distinguished
 syntax enable
 let g:solarized_termcolors=256
+
+" Handlebars syntax
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
