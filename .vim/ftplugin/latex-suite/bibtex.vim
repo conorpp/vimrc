@@ -217,7 +217,7 @@ function BibT(type, options, prompt)
 
 		if exists('s:'.field.'_standsfor')
 			let field_name = s:{field}_standsfor
-			let retval = retval.field_name." = {},\n"
+			let retval = retval.field_name." = {<++>},\n"
 		endif
 
 		let i = i + 1
@@ -235,15 +235,15 @@ function BibT(type, options, prompt)
 				break
 			endif
 
-			let retval = retval.field_name." = {},\n"
+			let retval = retval.field_name." = {<++>},\n"
 
 			let i = i + 1
 		endwhile
 
 	endif
 
-	let retval = retval.'otherinfo = {}'."\n"
-	let retval = retval."}"."\n"
+	let retval = retval.'otherinfo = {<++>}'."\n"
+	let retval = retval."}<++>"."\n"
 
 	return IMAP_PutTextWithMovement(retval)
 endfunction
@@ -253,10 +253,10 @@ function! s:Input(prompt, ask) " {{{
 	if a:ask == 1
 		let retval = input(a:prompt)
 		if retval == ''
-			return ""
+			return "<++>"
 		endif
 	else
-		return ""
+		return "<++>"
 	endif
 endfunction 
 
