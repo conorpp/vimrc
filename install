@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo apt-get install ctags
 cp -rf .vimrc ~
 cp -rf .vim ~
 
