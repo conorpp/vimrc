@@ -1,6 +1,16 @@
 #!/bin/bash
 
+if [[ `uname`=="Darwin"  ]]
+then
+
+brew install ctags
+
+else
+
 sudo apt-get install ctags
+
+fi
+
 cp -rf .vimrc ~
 cp -rf .vim ~
 
