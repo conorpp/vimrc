@@ -24,6 +24,8 @@ set nu       " Set line numbers
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 
+au BufRead *.md setlocal spell spelllang=en_us
+
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
 set shellslash
