@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ `uname`=="Darwin"  ]]
+if [[ `uname` == "Darwin"  ]]
 then
 
 brew install ctags
