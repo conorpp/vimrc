@@ -5,6 +5,9 @@ filetype off
 syntax on
 filetype plugin indent on
 
+
+
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -101,6 +104,11 @@ nmap <left>  :3wincmd <<cr>
 nmap <right> :3wincmd ><cr>
 nmap <up>    :3wincmd +<cr>
 nmap <down>  :3wincmd -<cr>
+
+map <leader>y              "*yy
+map <leader>p              "*p
+
+
 " for color
 
 " file binding for using tabs in makefiles
@@ -110,3 +118,6 @@ set t_Co=256
 colorscheme distinguished
 syntax enable
 let g:solarized_termcolors=256
+
+
+map <leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
