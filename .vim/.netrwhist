@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/pp/projectsQT/qapp_example'
 let g:netrw_dirhist_2='/home/pp/apps/class/appliedsoftware/du/src'
 let g:netrw_dirhist_3='/home/pp/apps/class/appliedsoftware/gui'
 let g:netrw_dirhist_4='/home/pp/apps/class/unix/pytree/tests/root'
 let g:netrw_dirhist_5='/home/pp/apps/overthewire'
+let g:netrw_dirhist_6='/home/pp/apps/conorpp.github.com/_site'

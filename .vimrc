@@ -1,32 +1,32 @@
 
+" A package manager for vim
 set nocompatible
 call pathogen#infect()
+
 filetype off
 syntax on
 filetype plugin indent on
 
-
-
-
-set tabstop=4
+set tabstop=4           " tabs are 4 spaces
 set shiftwidth=4
 set expandtab
 set softtabstop=4
-syntax on
 set autoindent
 set smartindent
 set showmatch
 set ruler
 set backspace=indent,eol,start
-"highlight ColorColumn ctermbg=17
-"set colorcolumn=81
+set encoding=utf-8
+
 exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\uB7"
 set list
 set mouse=a  " Set mouse highlighting
 set nu       " Set line numbers
+
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 
+" spell check for markdown files
 au BufRead *.md setlocal spell spelllang=en_us
 
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
@@ -39,14 +39,13 @@ set shellslash
 set grepprg=grep\ -nH\ $*
 
 " Set Leader Key
-let mapleader = ","
+let mapleader = "\<Space>"
 
 " Insert Headings
 function FileHeading()
     let s:line=line(".")
-    call setline(s:line,"/*")
-    call append(s:line,"  Name: Conor Patrick")
-    call append(s:line+1,"  PID#: 905700607")
+    call setline(s:line, "/*")
+    call append(s:line,  "  Name: Conor Patrick")
     call append(s:line+2,"  Email: conorpp@vt.edu")
     call append(s:line+3,"  Class: ECE 3574")
     call append(s:line+4,"  Date: ".strftime("%b %d %Y"))
@@ -70,7 +69,6 @@ map <leader>F mz:execute FunctionHeading()<CR>`zjA
 map <leader>f mz:execute FileHeading()<CR>`z4kA
 
 " Window movement
-
 function! WinMove(key) 
     let t:curwin = winnr() 
     exec "wincmd ".a:key 
@@ -84,32 +82,25 @@ function! WinMove(key)
     endif
 endfunction
 
+" Exit insert mode by pressing jj
+inoremap jj <ESC>
 map <leader>h              :call WinMove('h')<cr>
 map <leader>k              :call WinMove('k')<cr>
 map <leader>l              :call WinMove('l')<cr>
 map <leader>j              :call WinMove('j')<cr>
 
-map <leader>wc :wincmd q<cr>
-map <leader>wr <C-W>r
-
-map <leader>H              :wincmd H<cr>
-map <leader>K              :wincmd K<cr>
-map <leader>L              :wincmd L<cr>
-map <leader>J              :wincmd J<cr>
-map <F2> <Esc>
-imap <F2> <Esc>
-map <F3> v
-imap <F3> <Esc>v
+" Resize windows with arrow keys
 nmap <left>  :3wincmd <<cr>
 nmap <right> :3wincmd ><cr>
 nmap <up>    :3wincmd +<cr>
 nmap <down>  :3wincmd -<cr>
 
-map <leader>y              "*yy
+" Copy,cut,paste using system clipboard
+" e.g. <leader>yy
+map <leader>y              "+y
+map <leader>d              "*d
 map <leader>p              "*p
 
-
-" for color
 
 " file binding for using tabs in makefiles
 autocmd FileType make setlocal noexpandtab
@@ -120,4 +111,3 @@ syntax enable
 let g:solarized_termcolors=256
 
 
-map <leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
