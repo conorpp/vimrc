@@ -110,4 +110,5 @@ colorscheme distinguished
 syntax enable
 let g:solarized_termcolors=256
 
-
+" open tabs with E
+cmap E tabedit
