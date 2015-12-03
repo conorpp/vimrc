@@ -110,5 +110,14 @@ colorscheme distinguished
 syntax enable
 let g:solarized_termcolors=256
 
-" open tabs with E
-cmap E tabedit
+" tab functionality
+nnoremap <M-Left> :tabprevious<CR>
+nnoremap <M-Right> :tabnext<CR>
+
+nnoremap <S-Right> :tabe %<CR>
+nnoremap <S-Left> :tabe %<CR>
+
+nnoremap <A-S-Left> :tabm -1<CR>
+nnoremap <A-S-Right> :tabm +1<CR>
+
+
