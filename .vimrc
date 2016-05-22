@@ -26,17 +26,22 @@ set nu       " Set line numbers
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 
-" spell check for markdown files
+" spell check for markdown and latex files 
 au BufRead *.md setlocal spell spelllang=en_us
+au BufRead *.tex setlocal spell spelllang=en_us
+"au BufRead *.tex setlocal spell spelllang=en_us
 
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
 set shellslash
 
+
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
 set grepprg=grep\ -nH\ $*
+
+let g:tex_flavor='latex'
 
 " Set Leader Key
 let mapleader = "\<Space>"
@@ -101,6 +106,9 @@ map <leader>y              "+y
 map <leader>d              "*d
 map <leader>p              "*p
 
+" latex
+map <leader>x              :! pdflatex $PAPER<CR><CR>
+
 
 " file binding for using tabs in makefiles
 autocmd FileType make setlocal noexpandtab
@@ -119,5 +127,4 @@ nnoremap <S-Left> :tabe %<CR>
 
 nnoremap <A-S-Left> :tabm -1<CR>
 nnoremap <A-S-Right> :tabm +1<CR>
-
 
