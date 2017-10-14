@@ -129,3 +129,5 @@ nnoremap <A-S-Left> :tabm -1<CR>
 nnoremap <A-S-Right> :tabm +1<CR>
 
 let @s = '^itranslate([0,0,0])( rotate([0,0,0]) ( A ) )j0'
+
+
